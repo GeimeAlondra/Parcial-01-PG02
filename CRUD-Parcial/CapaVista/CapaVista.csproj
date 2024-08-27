@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Parcial01DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Parcial01DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RegistrarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,11 +62,6 @@
     </Compile>
     <Compile Include="VerProducto.Designer.cs">
       <DependentUpon>VerProducto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Parcial01DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Parcial01DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,6 +105,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CapaEntidades\CapaEntidades.csproj">
+      <Project>{09d7d41d-fc7e-449a-ad27-2387ba24ec2e}</Project>
+      <Name>CapaEntidades</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CapaLogica\CapaLogica.csproj">
       <Project>{673dfd4a-2554-4a70-a8b8-4d298b97b306}</Project>
       <Name>CapaLogica</Name>

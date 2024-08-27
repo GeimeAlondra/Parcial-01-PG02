@@ -43,16 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBConectar.cs" />
+    <Compile Include="ProductoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaEntidades\CapaEntidades.csproj">
       <Project>{09d7d41d-fc7e-449a-ad27-2387ba24ec2e}</Project>
       <Name>CapaEntidades</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CapaLogica\CapaLogica.csproj">
-      <Project>{673dfd4a-2554-4a70-a8b8-4d298b97b306}</Project>
-      <Name>CapaLogica</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
