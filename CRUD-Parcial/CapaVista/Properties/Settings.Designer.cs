@@ -33,5 +33,16 @@ namespace CapaVista.Properties {
                 return ((string)(this["PARCIAL03ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;Initial Catalog=Parcial01;Integrated Security=True;Trust" +
+            "ServerCertificate=True")]
+        public string Parcial01ConnectionString {
+            get {
+                return ((string)(this["Parcial01ConnectionString"]));
+            }
+        }
     }
 }
