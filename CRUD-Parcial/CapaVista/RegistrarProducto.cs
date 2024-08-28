@@ -17,8 +17,9 @@ namespace CapaVista
     {
         ProductoRepository _productoRepository;
         int id;
+        private VerProducto _form1;
 
-        public RegistrarProducto(int _id = 0)
+        public RegistrarProducto(VerProducto form1, int _id = 0)
         {
             InitializeComponent();
             id = _id;
@@ -37,13 +38,13 @@ namespace CapaVista
             }
         }
 
-        //private void productosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        //{
-        //    this.Validate();
-        //    this.productosBindingSource.EndEdit();
-        //    this.tableAdapterManager.UpdateAll(this.parcial01DataSet);
+        //Metodos para cargar el datagrid desde el segundo formulario simulando una ventana modal por que la pagina principal no se cierra
+        public event EventHandler LlenarDataGridViewRequested;
 
-        //}
+        private void OnLlenarDataGridViewRequested()
+        {
+            LlenarDataGridViewRequested?.Invoke(this, EventArgs.Empty);
+        }
 
         private void RegistrarProducto_Load(object sender, EventArgs e)
         {
@@ -133,6 +134,7 @@ namespace CapaVista
                     }
 
                 }
+                OnLlenarDataGridViewRequested();
             }
             catch (Exception ex)
             {

@@ -104,7 +104,7 @@ namespace CapaDatos
                 insertInto = insertInto + "           ,[Precio] " + "\n";
                 insertInto = insertInto + "           ,[Stock] " + "\n";
                 insertInto = insertInto + "           ,[Marca] " + "\n";
-                insertInto = insertInto + "           ,[Categoria]) " + "\n"; // El paréntesis de cierre aquí
+                insertInto = insertInto + "           ,[Categoria]) " + "\n"; 
 
                 insertInto = insertInto + "     VALUES " + "\n";
                 insertInto = insertInto + "           (@Nombre " + "\n";
@@ -112,7 +112,7 @@ namespace CapaDatos
                 insertInto = insertInto + "           ,@Precio " + "\n";
                 insertInto = insertInto + "           ,@Stock " + "\n";
                 insertInto = insertInto + "           ,@Marca " + "\n";
-                insertInto = insertInto + "           ,@Categoria)"; // El paréntesis de cierre aquí
+                insertInto = insertInto + "           ,@Categoria)"; 
 
                 using (var comando = new SqlCommand(insertInto, conexion))
                 {
@@ -175,6 +175,45 @@ namespace CapaDatos
                     int eliminados = comando.ExecuteNonQuery();
 
                     return eliminados;
+                }
+            }
+        }
+
+        public List<Producto> FiltroNombre(string nombre)
+        {
+            using (var conexion = DBConectar.GetSqlConnection())
+            {
+
+                string queryBusqueda = $"SELECT Id, Nombre, Descripcion, Precio, Stock, Marca, Categoria " +
+                                       "FROM [dbo].[Productos] " +
+                                       $"WHERE Nombre LIKE @Nombre";
+
+                using (SqlCommand comando = new SqlCommand(queryBusqueda, conexion))
+                {
+                    comando.Parameters.AddWithValue("@Nombre", "%" + nombre + "%");
+
+                    using (SqlDataReader reader = comando.ExecuteReader())
+                    {
+                        List<Producto> productosEncontrados = new List<Producto>();
+
+                        while (reader.Read())
+                        {
+                            Producto producto = new Producto
+                            {
+                                Id = reader.GetInt32(0),
+                                Nombre = reader.GetString(1),
+                                Descripcion = reader.GetString(2),
+                                Precio = reader.GetDecimal(3),
+                                Stock = reader.GetInt32(4),
+                                Marca = reader.GetString(5),
+                                Categoria = reader.GetString(6)
+                            };
+
+                            productosEncontrados.Add(producto);
+                        }
+
+                        return productosEncontrados;
+                    }
                 }
             }
         }

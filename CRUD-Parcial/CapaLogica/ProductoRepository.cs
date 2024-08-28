@@ -47,5 +47,11 @@ namespace CapaLogica
             return _productoDAL.EliminarProducto(id);
         }
 
+        public List<Producto> FiltroNombre(string nombre)
+        {
+            _productoDAL = new ProductoDAL();
+
+            return _productoDAL.FiltroNombre(nombre);
+        }
     }
 }

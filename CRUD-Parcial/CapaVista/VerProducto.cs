@@ -44,30 +44,37 @@ namespace CapaVista
             productosDataGrid.DataSource = _productoRepository.ObtenerTodos();
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void Filtrar()
         {
-
+            _productoRepository = new ProductoRepository();
+            string nombre = txtBuscar.Text;
+            productosDataGrid.DataSource = _productoRepository.FiltroNombre(nombre);
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            RegistrarProducto objRegistroProducto = new RegistrarProducto();
+            RegistrarProducto objRegistroProducto = new RegistrarProducto(this);
+            objRegistroProducto.LlenarDataGridViewRequested += Form1_LlenarDataGridViewRequested;
             objRegistroProducto.Show();
+        }
+
+        private void Form1_LlenarDataGridViewRequested(object sender, EventArgs e)
+        {
+            // Actualizar el DataGridView
+            CargarProductos();
         }
 
         private void productosDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             
-                if (productosDataGrid.Columns[e.ColumnIndex].Name == "btnEditar")
-                {
-                //Esta linea de abajo creo que no esta haciendo nada pero me da miedo borrarla XD
+            if (productosDataGrid.Columns[e.ColumnIndex].Name == "btnEditar")
+            {
                 int Id = Convert.ToInt32(productosDataGrid.CurrentRow.Cells["Id"].Value.ToString());
 
-                    RegistrarProducto objRegistroProducto = new RegistrarProducto(Id);
-                    objRegistroProducto.Show();
-                    
-
-                }
+                RegistrarProducto objRegistroProducto = new RegistrarProducto(this, Id);
+                objRegistroProducto.LlenarDataGridViewRequested += Form1_LlenarDataGridViewRequested;
+                objRegistroProducto.Show();
+            }
             else if(productosDataGrid.Columns[e.ColumnIndex].Name == "btnEliminar")
             {
                 int Id = Convert.ToInt32(productosDataGrid.CurrentRow.Cells["Id"].Value.ToString());
@@ -79,7 +86,6 @@ namespace CapaVista
                 {
                     MessageBox.Show("Producto eliminado con exito", "| Registro Producto",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                  
                 }
                 else
                 {
@@ -89,6 +95,13 @@ namespace CapaVista
 
                 CargarProductos();
             }
+        }
+
+       
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            Filtrar();
         }
     }
 }
