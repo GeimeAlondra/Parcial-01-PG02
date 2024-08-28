@@ -96,12 +96,11 @@ namespace CapaDatos
         {
             using (var conexion = DBConectar.GetSqlConnection())
             {
-
-                string queryBusqueda = $"SELECT Id, Nombre, Descripcion, Precio, Stock, Marca, Categoria " +
+                string busqueda = $"SELECT Id, Nombre, Descripcion, Precio, Stock, Marca, Categoria " +
                                        "FROM [dbo].[Productos] " +
                                        $"WHERE Nombre LIKE @Nombre";
 
-                using (SqlCommand comando = new SqlCommand(queryBusqueda, conexion))
+                using (SqlCommand comando = new SqlCommand(busqueda, conexion))
                 {
                     comando.Parameters.AddWithValue("@Nombre", "%" + nombre + "%");
 

@@ -40,7 +40,6 @@ namespace CapaVista
         private void CargarProductos()
         {
             _productoRepository = new ProductoRepository();
-
             productosDataGrid.DataSource = _productoRepository.ObtenerTodos();
         }
 
