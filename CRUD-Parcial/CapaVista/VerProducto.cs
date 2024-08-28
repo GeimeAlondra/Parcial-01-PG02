@@ -32,7 +32,7 @@ namespace CapaVista
 
         private void VerProducto_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'parcial01DataSet.Productos' Puede moverla o quitarla según sea necesario.
+            // TODO: esta línea de código carga datos en la tabla 'parcial01DataSet.Productos'
             this.productosTableAdapter.Fill(this.parcial01DataSet.Productos);
 
         }
@@ -51,6 +51,11 @@ namespace CapaVista
             productosDataGrid.DataSource = _productoRepository.FiltroNombre(nombre);
         }
 
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            Filtrar();
+        }
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             RegistrarProducto objRegistroProducto = new RegistrarProducto(this);
@@ -66,7 +71,6 @@ namespace CapaVista
 
         private void productosDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
             if (productosDataGrid.Columns[e.ColumnIndex].Name == "btnEditar")
             {
                 int Id = Convert.ToInt32(productosDataGrid.CurrentRow.Cells["Id"].Value.ToString());
@@ -95,13 +99,6 @@ namespace CapaVista
 
                 CargarProductos();
             }
-        }
-
-       
-
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
-        {
-            Filtrar();
         }
     }
 }

@@ -26,6 +26,13 @@ namespace CapaLogica
             return _productoDAL.ObtenerPorID(id);
         }
 
+        public List<Producto> FiltroNombre(string nombre)
+        {
+            _productoDAL = new ProductoDAL();
+
+            return _productoDAL.FiltroNombre(nombre);
+        }
+
         public int GuardarProducto(Producto producto)
         {
             _productoDAL = new ProductoDAL();
@@ -45,13 +52,6 @@ namespace CapaLogica
             _productoDAL = new ProductoDAL();
 
             return _productoDAL.EliminarProducto(id);
-        }
-
-        public List<Producto> FiltroNombre(string nombre)
-        {
-            _productoDAL = new ProductoDAL();
-
-            return _productoDAL.FiltroNombre(nombre);
         }
     }
 }

@@ -38,7 +38,7 @@ namespace CapaVista
             }
         }
 
-        //Metodos para cargar el datagrid desde el segundo formulario simulando una ventana modal por que la pagina principal no se cierra
+        // Métodos para cargar el datagrid despues de realizar una inserción o actualización
         public event EventHandler LlenarDataGridViewRequested;
 
         private void OnLlenarDataGridViewRequested()
@@ -79,8 +79,8 @@ namespace CapaVista
                 //    return; // Si los campos no son válidos, salir del método
                 //}
                 int resultado;
-                //debemo indicar si es una actualizacion o es un nuevo producto
                
+                // Indicamos si guardaremos o actualizaremos
                 if (id > 0)
                 {
                     productosBindingSource.EndEdit();
