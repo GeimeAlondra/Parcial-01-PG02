@@ -36,6 +36,7 @@
             System.Windows.Forms.Label marcaLabel;
             System.Windows.Forms.Label categoriaLabel;
             System.Windows.Forms.Label label2;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrarProducto));
             this.parcial01DataSet = new CapaVista.Parcial01DataSet();
             this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productosTableAdapter = new CapaVista.Parcial01DataSetTableAdapters.ProductosTableAdapter();
@@ -209,7 +210,7 @@
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Location = new System.Drawing.Point(150, 328);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(95, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(95, 31);
             this.btnGuardar.TabIndex = 15;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -221,7 +222,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Location = new System.Drawing.Point(372, 328);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(95, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(95, 31);
             this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -240,7 +241,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(215, 52);
+            this.label3.Location = new System.Drawing.Point(216, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(196, 25);
             this.label3.TabIndex = 20;
@@ -270,8 +271,9 @@
             this.Controls.Add(this.txtMarca);
             this.Controls.Add(categoriaLabel);
             this.Controls.Add(this.txtCategoria);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegistrarProducto";
-            this.Text = "RegistrarProducto";
+            this.Text = "AgregarProducto";
             this.Load += new System.EventHandler(this.RegistrarProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.parcial01DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
