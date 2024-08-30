@@ -19,10 +19,9 @@ namespace CapaVista
         // Constructor de la clase VerProducto
         public VerProducto()
         {
-            // Inicializa los componentes del formulario
             InitializeComponent(); 
 
-            // Llama a un método para cargar los productos
+            // Llama al método para cargar los productos
             CargarProductos();  
             
             // Inicializa la instancia de ProductoRepository
