@@ -66,7 +66,7 @@
             // 
             nombreLabel.AutoSize = true;
             nombreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nombreLabel.Location = new System.Drawing.Point(147, 140);
+            nombreLabel.Location = new System.Drawing.Point(147, 102);
             nombreLabel.Name = "nombreLabel";
             nombreLabel.Size = new System.Drawing.Size(59, 16);
             nombreLabel.TabIndex = 3;
@@ -76,7 +76,7 @@
             // 
             descripcionLabel.AutoSize = true;
             descripcionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descripcionLabel.Location = new System.Drawing.Point(147, 166);
+            descripcionLabel.Location = new System.Drawing.Point(147, 128);
             descripcionLabel.Name = "descripcionLabel";
             descripcionLabel.Size = new System.Drawing.Size(82, 16);
             descripcionLabel.TabIndex = 5;
@@ -126,7 +126,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label2.Location = new System.Drawing.Point(147, 114);
+            label2.Location = new System.Drawing.Point(147, 76);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(23, 16);
             label2.TabIndex = 18;
@@ -156,7 +156,7 @@
             // txtNombre
             // 
             this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "Nombre", true));
-            this.txtNombre.Location = new System.Drawing.Point(235, 136);
+            this.txtNombre.Location = new System.Drawing.Point(235, 98);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(232, 20);
             this.txtNombre.TabIndex = 4;
@@ -164,9 +164,10 @@
             // txtDescripcion
             // 
             this.txtDescripcion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "Descripcion", true));
-            this.txtDescripcion.Location = new System.Drawing.Point(235, 162);
+            this.txtDescripcion.Location = new System.Drawing.Point(235, 124);
+            this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(232, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(232, 58);
             this.txtDescripcion.TabIndex = 6;
             // 
             // txtPrecio
@@ -231,7 +232,7 @@
             // txtId
             // 
             this.txtId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "Id", true));
-            this.txtId.Location = new System.Drawing.Point(235, 110);
+            this.txtId.Location = new System.Drawing.Point(235, 72);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(232, 20);
             this.txtId.TabIndex = 19;
@@ -241,7 +242,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(216, 54);
+            this.label3.Location = new System.Drawing.Point(214, 44);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(196, 25);
             this.label3.TabIndex = 20;

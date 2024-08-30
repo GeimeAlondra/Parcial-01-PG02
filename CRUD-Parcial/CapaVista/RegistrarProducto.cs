@@ -267,7 +267,7 @@ namespace CapaVista
             }
         }
 
-        // Validación para permitir solo caracteres enteros y punto en el textBox de Stock
+        // Validación para permitir solo caracteres enteros numericos y punto en el textBox de Stock
         private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permitir solo dígitos, el punto decimal y el carácter de retroceso
@@ -278,7 +278,7 @@ namespace CapaVista
             }
         }
 
-        // Validación para permitir solo caracteres enteros en el textBox de Stock
+        // Validación para permitir solo caracteres enteros numericos en el textBox de Stock
         private void txtStock_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verifica si el carácter ingresado no es un control (como Backspace) y no es un dígito
