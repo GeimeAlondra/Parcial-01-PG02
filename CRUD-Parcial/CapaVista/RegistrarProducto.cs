@@ -28,7 +28,6 @@ namespace CapaVista
         // Constructor de la clase RegistrarProducto
         public RegistrarProducto(VerProducto form1, int _id = 0)
         {
-            // Inicializa los componentes del formulario
             InitializeComponent();
 
             // Asigna el valor del ID pasado al constructor
@@ -69,6 +68,12 @@ namespace CapaVista
             // TODO: esta línea de código carga datos en la tabla 'parcial01DataSet.Productos' Puede moverla o quitarla según sea necesario.
             this.productosTableAdapter.Fill(this.parcial01DataSet.Productos);
 
+            // Si estamos agregando un nuevo producto (ID es 0), establecemos los campos de precio y stock como vacíos
+            if (id == 0)
+            {
+                txtPrecio.Text = string.Empty;
+                txtStock.Text = string.Empty;
+            }
         }
 
         // Método manejador del evento Click del botón Cancelar
@@ -267,7 +272,7 @@ namespace CapaVista
             }
         }
 
-        // Validación para permitir solo caracteres enteros numericos y punto en el textBox de Stock
+        // Validación para permitir solo caracteres enteros numericos y punto en el textBox de Precio
         private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permitir solo dígitos, el punto decimal y el carácter de retroceso
